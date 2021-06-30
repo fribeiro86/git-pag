@@ -149,7 +149,7 @@
         <div class="col-sm-12">
 
 
-          <div class="row ">
+          <div class="row mt-3">
             <img src="work2.png " class="pl-3">
             <h1 class="pl-2">Experiências Profissionais</h1>
           </div>
@@ -257,7 +257,26 @@
 
 <script>
 
+  var x = "red";
 
+  function atual() {
+
+    if (x === "red") {
+      document.getElementById("current").style.backgroundColor = x;
+      document.getElementById("current").style.color = "white";
+      x = "white"; 
+    } else {
+      document.getElementById("current").style.backgroundColor = x;
+      document.getElementById("current").style.color = "black";
+      x= "red";
+    }
+
+    var id = setTimeout(() => {
+      atual();
+    }, 500);
+  }
+
+  atual();
 
 </script>
 
