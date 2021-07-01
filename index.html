@@ -6,73 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="estilo.css"/> 
+  <script src="codigo.js"></script>
 
 
-  <title>Minha primeira página</title>
+  <title>Fabricio Ribeiro</title>
 
 </head>
-<style>
-  .teste {
-
-    border: 0px solid black;
-    box-shadow: 0px 0px 10px rgb(161, 159, 159);
-    background-color: white;
-    height: 80%;
-  }
-
-  h3 {
-
-    font-size: 18px;
-    color: rgb(151, 144, 144);
-  }
-
-  .progresso {
-
-    border: 1px solid rgb(219, 215, 215);
-    width: 100%;
-    height: 25px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgb(182, 179, 179);
-    background-color: rgb(231, 227, 227);
-
-  }
-
-  .bar {
-    background-color: rgb(3, 95, 80);
-    border-radius: 20px;
-    height: 100%;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-
-  }
-
-  .html {
-    width: 90%;
-  }
-
-  .css {
-    width: 85%;
-  }
-
-  .script {
-    width: 80%;
-  }
-
-  #current {
-    padding: 7px;
-    border-radius: 10px;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(8, 44, 121);
-  }
-</style>
 
 <body>
 
-
-  <div class="container-fluid" style="background-color: rgb(243, 241, 241);">
+  <div class="container-fluid" id="container">
     <div class="row">
 
       <!--Coluna da Esquerda-->
@@ -240,8 +184,7 @@
 
   </div>
 
-  <div class="jumbotron jumbotron-fluid mb-0"
-    style="background-color: #009688; text-align: center; color: white; font-weight: bold;">
+  <div class="jumbotron jumbotron-fluid mb-0" id="footer">
     <div class="container">
       <h1 class="m-0">FABRICIO RIBEIRO</h1>
       <p class="m-0">Desenvolvedor Fullstack Javascript</p>
@@ -255,29 +198,5 @@
 
 
 
-<script>
-
-  var x = "red";
-
-  function atual() {
-
-    if (x === "red") {
-      document.getElementById("current").style.backgroundColor = x;
-      document.getElementById("current").style.color = "white";
-      x = "white"; 
-    } else {
-      document.getElementById("current").style.backgroundColor = x;
-      document.getElementById("current").style.color = "black";
-      x= "red";
-    }
-
-    var id = setTimeout(() => {
-      atual();
-    }, 500);
-  }
-
-  atual();
-
-</script>
 
 </html>
