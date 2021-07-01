@@ -1,6 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2? family = Shadows + Into + Light & display = swap'); 
+
 #container {
 
     background-color: rgb(243, 241, 241);
+}
+
+.fon{
+
+  font-family: 'Shadows Into Light', cursive;
+
 }
 
 .teste {
@@ -60,8 +69,8 @@
 
   #footer {
 
-    background-color: #009688; 
+    background-color: black;
     text-align: center; 
-    color: white; 
+    color: rgb(255, 255, 255); 
     font-weight: bold;
   }

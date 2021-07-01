@@ -1,20 +1,20 @@
-  var x = "red";
+var x = "red";
 
-  function atual() {
+function atual() {
 
     if (x === "red") {
-      document.getElementById("current").style.backgroundColor = x;
-      document.getElementById("current").style.color = "white";
-      x = "white"; 
+        document.getElementById("current").style.backgroundColor = x;
+        document.getElementById("current").style.color = "white";
+        x = "white";
     } else {
-      document.getElementById("current").style.backgroundColor = x;
-      document.getElementById("current").style.color = "black";
-      x= "red";
+        document.getElementById("current").style.backgroundColor = x;
+        document.getElementById("current").style.color = "black";
+        x = "red";
     }
 
     var id = setTimeout(() => {
-      atual();
+        atual();
     }, 600);
-  }
+}
 
-  window.addEventListener("load",atual); 
+window.addEventListener("load", atual);
