@@ -53,6 +53,10 @@
     width: 80%;
   }
 
+  .boot {
+    width: 73%;
+  }
+
   #current {
     padding: 7px;
     border-radius: 10px;
