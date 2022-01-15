@@ -69,32 +69,34 @@
 
             </div>
 
+       
+
             <div class="tec">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>/</button>
+                <button onclick="mostrarNaTela(7)">7</button>
+                <button onclick="mostrarNaTela(8)" >8</button>
+                <button onclick="mostrarNaTela(9)">9</button>
+                <button onclick="mostrarNaTela('/')">/</button>
             </div>
 
             <div class="tec">
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>X</button>
+                <button onclick="mostrarNaTela(4)">4</button>
+                <button onclick="mostrarNaTela(5)">5</button>
+                <button onclick="mostrarNaTela(6)">6</button>
+                <button onclick="mostrarNaTela('x')">x</button>
             </div>
 
             <div class="tec">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>-</button>
+                <button onclick="mostrarNaTela(1)">1</button>
+                <button onclick="mostrarNaTela(2)">2</button>
+                <button onclick="mostrarNaTela(3)">3</button>
+                <button onclick="mostrarNaTela('-')">-</button>
             </div>
 
             <div class="tec">
-                <button>0</button>
-                <button>.</button>
-                <button>=</button>
-                <button>+</button>
+                <button onclick="mostrarNaTela(0)">0</button>
+                <button onclick="mostrarNaTela('.')">.</button>
+                <button onclick="mostrarNaTela('=')">=</button>
+                <button onclick="mostrarNaTela('+')">+</button>
             </div>
 
 
@@ -106,7 +108,12 @@
 </body>
 <script>
 
+var tela = document.getElementById("tela");
 
+function mostrarNaTela(numero) {
+        
+    tela.value += numero; 
+}
 
 
 
