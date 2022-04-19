@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #grid-container {
+
+        display: grid;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: auto auto;
+        gap: 15px;
+        margin: 20px;
+    }
+
+    .grid-item2 {
+        margin: 10px;
+        background-color: #00BFFF;
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px;
+
+    }
+
+    .dadosLeft,
+    .dadosRight {
+
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .inputDados {
+        height: 40px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #00BFFF;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    label {
+
+        font-size: 15px;
+
+    }
+
+    table {
+        width: 100%;
+        margin-top: 40px;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+
+    #th1 {
+
+        text-align: left;
+        color: #00BFFF;
+        font-weight: bold;
+        padding-bottom: 10px;
+        font-size: 20px;
+
+    }
+
+    #th2,
+    #th3 {
+
+        text-align: center;
+        color: #00BFFF;
+        font-weight: bold;
+        padding-bottom: 10px;
+        font-size: 20px;
+
+    }
+
+    table td {
+
+        width: 35%;
+    }
+
+
+    .tdcenter {
+
+        text-align: center;
+
+    }
+
+    .tdresultado {
+        border-top: 2px solid #00BFFF;
+        border-bottom: 2px solid #00BFFF;
+        font-weight: bold;
+    }
+
+    .inputTabela {
+
+        border: 1px solid #00BFFF;
+        border-radius: 20px;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        margin-bottom: 5px;
+
+    }
+
+    @media screen and (max-width: 822px) {
+
+        #grid-container {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .imagem {
+
+        font-size: 25px;
+        padding: 15px;
+        color: #FFF;
+        text-align: center;
+
+    }
+
+    .im1 {
+        background-color: #136b88;
+    }
+
+    .im2 {
+        background-color: black;
+    }
+
+    .textos {
+
+        padding: 10px;
+    }
+
+    .textos h2,
+    span {
+
+        color: #fff;
+        font-size: 30px;
+        margin-right: 10px;
+    }
+
+    .textos p {
+
+        font-size: 15px;
+        margin: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+</style>
+
+<body>
+
+
+    <section id="grid-container">
+
+        <!--Dados e Tabelas-->
+        <div class="grid-item">
+            <!--Dados-->
+            <div class="box">
+                <div class="dadosLeft">
+                    <label for="totalviajantes">Total de Viajantes</label>
+                    <input type="text" name="totalviajantes" id="totalviajantes" class="inputDados">
+                    <label for="custototalviagem">Custo Total da Viagem</label>
+                    <input type="text" name="custototalviagem" id="custototalviagem" class="inputDados">
+                </div>
+
+                <div class="dadosRight">
+                    <label for="duracaoviagem">Duração da Viagem</label>
+                    <input type="text" name="duracaoviagem" id="duracaoviagem" class="inputDados">
+                    <label for="duracaoviagem">Custo por Pessoa</label>
+                    <input type="text" name="custopessoa" id="custopessoa" class="inputDados">
+                </div>
+            </div>
+
+            <!--Tabela 1-->
+
+            <table>
+                <tr>
+                    <th id="th1">Gasolina</th>
+                    <th id="th2">Valor</th>
+                    <th id="th3">Adicionar a viagem?</th>
+                </tr>
+                <tr>
+                    <td>Total estimado por quilômetros</td>
+                    <td class="tdcenter"> <input type="text" value="0" id="totalestimadoporkm" class="inputTabela"
+                            onchange="calcularGasolina()"> </td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr>
+                    <td>Média de quilômetros por litro</td>
+                    <td class="tdcenter"><input type="text" value="0" id="mediakmporlitro" class="inputTabela"
+                            onchange="calcularGasolina()"></td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr>
+                    <td>Custo médio por litro</td>
+                    <td class="tdcenter"><input type="text" value="0" id="customediolitro" class="inputTabela"
+                            onchange="calcularGasolina()"></td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr>
+                    <td>Total de veículos</td>
+                    <td class="tdcenter"><input type="text" value="0" id="totalveiculos" class="inputTabela"
+                            onchange="calcularGasolina()"></td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr class="trresultdo">
+                    <td class="tdresultado">Total</td>
+                    <td class="tdcenter tdresultado" id="total"></td>
+                    <td class="tdcenter tdresultado"></td>
+
+                </tr>
+            </table>
+
+            <!--TABELA 2-->
+
+            <table>
+                <tr>
+                    <th id="th1">Tarifa aérea</th>
+                    <th id="th2">Valor</th>
+                    <th id="th3">Adicionar a viagem?</th>
+                </tr>
+                <tr>
+                    <td>Custo estimado por pessoa</td>
+                    <td class="tdcenter"> <input type="text" value="0" id="custoestimadopessoa" class="inputTabela"
+                            onchange="calcularTarifaAerea()"> </td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr>
+                    <td>Aluguel do veículo</td>
+                    <td class="tdcenter"> <input type="text" value="0" id="aluguelveiculo" class="inputTabela"
+                            onchange="calcularTarifaAerea()"> </td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr class="trresultdo">
+                    <td class="tdresultado">Total</td>
+                    <td class="tdcenter tdresultado" id="totalAerea"></td>
+                    <td class="tdcenter tdresultado"></td>
+
+                </tr>
+            </table>
+
+            <!--TABELA 3-->
+
+
+            <table>
+                <tr>
+                    <th id="th1">Refeições</th>
+                    <th id="th2">Valor</th>
+                    <th id="th3">Adicionar a viagem?</th>
+                </tr>
+                <tr>
+                    <td>Custo estimado por refeição</td>
+                    <td class="tdcenter"> <input type="text" value="0" id="custoestimadorefeicao" class="inputTabela"
+                            onchange="calcularRefeicao()"> </td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr>
+                    <td>Refeições por dia</td>
+                    <td class="tdcenter"> <input type="text" value="0" id="refeicoesdia" class="inputTabela"
+                            onchange="calcularRefeicao()"> </td>
+                    <td class="tdcenter">Sim</td>
+                </tr>
+                <tr class="trresultdo">
+                    <td class="tdresultado">Total</td>
+                    <td class="tdcenter tdresultado" id="totalRefeicao"></td>
+                    <td class="tdcenter tdresultado"></td>
+
+                </tr>
+            </table>
+
+        </div>
+
+        <!--Informações-->
+        <div class="grid-item2">
+            <div class="imagem im1">
+                <h1>Planejador de Férias</h1>
+
+            </div>
+            <div class="imagem im2">
+                <h1>Férias de Verão 2022</h1>
+            </div>
+
+            <div class="textos">
+                <h2>Dicas</h2>
+                <p><span>1.</span>Calcule os custos de combustível e passagens aéreas para determinar o melhor meio de
+                    transporte.</p>
+                <p><span>2.</span>Planeje a viagem mais econômica inserindo Sim/Não nas colunas Adicionar à Viagem ou
+                    Adicionar ao Total para adicionar/remover o valor do Custo Total da Viagem. </p>
+                <p><span>3.</span>Na tabela Entretenimento/Diversos, use uma fórmula para calcular o custo total por
+                    pessoa. Por exemplo, para calcular ingressos para shows como US$ 100 por ingresso, insira
+                    =100*TotalViajantes na coluna Valor. (TotalViajantes é uma célula nomeada que se refere ao total de
+                    viajantes na célula B6.) </p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+<script>
+
+    let totalEstimadoPorKm;
+    let mediakmporlitro;
+    let customediolitro;
+    let totalveiculos;
+    let resultado = 0;
+    let total;
+
+    function calcularGasolina() {
+
+        totalEstimadoPorKm = parseFloat(document.getElementById("totalestimadoporkm").value);
+        mediakmporlitro = parseFloat(document.getElementById("mediakmporlitro").value);
+        customediolitro = parseFloat(document.getElementById("customediolitro").value);
+        totalveiculos = parseFloat(document.getElementById("totalveiculos").value);
+        total = document.getElementById("total");
+
+        resultado = totalEstimadoPorKm + mediakmporlitro + customediolitro + totalveiculos;
+
+        let resultadoFinal = resultado.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+
+        if (isNaN(resultado)) {
+
+            total.innerHTML = "--";
+
+        } else {
+            total.innerHTML = resultadoFinal;
+        }
+
+    }
+
+    function calcularTarifaAerea() {
+
+        let custoEstimadoPessoa = parseFloat(document.getElementById("custoestimadopessoa").value);
+        let aluguelVeiculo = parseFloat(document.getElementById("aluguelveiculo").value);
+        let resultadoAerea = 0;
+        let totalAerea = document.getElementById("totalAerea");
+
+        resultadoAerea = custoEstimadoPessoa + aluguelVeiculo;
+        let resultadoFinalAerea = resultadoAerea.toLocaleString("pt-br", { style: 'currency', currency: 'BRL' });
+
+        if (isNaN(resultadoAerea)) {
+
+            totalAerea.innerHTML = "--";
+        } else {
+
+            totalAerea.innerHTML = resultadoFinalAerea;
+        }
+
+    }
+
+    function calcularRefeicao() {
+
+        let custoEstimadoRefeicao = parseFloat(document.getElementById("custoestimadorefeicao").value);
+
+        let refeicoesDia = parseFloat(document.getElementById("refeicoesdia").value);
+        let resultadoRefeicao = 0;
+        let totalRefeicao = document.getElementById("totalRefeicao");
+        resultadoRefeicao = custoEstimadoRefeicao + refeicoesDia;
+
+        let resultadoFinalRefeicao = resultadoRefeicao.toLocaleString("pt-br", { style: 'currency', currency: 'BRL' });
+
+        if (isNaN(resultadoRefeicao)) {
+
+            totalRefeicao.innerHTML = "--";
+        } else {
+
+            totalRefeicao.innerHTML = resultadoFinalRefeicao;
+        }
+
+    }
+
+</script>
+
+</html>
